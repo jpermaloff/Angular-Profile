@@ -1,0 +1,38 @@
+body {
+    background-color: #eee;
+    font-family: 'Work Sans', sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    box-shadow:  0px 0px 10px 0px rgba(204,204,204,1);
+
+}
+.container{
+    width: 400px;
+    margin: 0 auto;
+    box-shadow:  0px 0px 10px 0px rgba(204,204,204,1);
+    background-color: white;
+}
+input {
+    padding: 14px;
+    border-radius: 15px;
+}
+button {
+    background-color: #505355;
+    width: 350px;
+    border-radius: 15px;
+    color: white;
+    margin: 0 auto;
+}
+button:hover {
+    background-color: #5BECD8;
+}
+.profilePic {
+    display: inline-block;
+    height: 200px;
+    width: 400px;
+    background-color: #1ECEFD
+}
