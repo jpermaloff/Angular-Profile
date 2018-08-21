@@ -17,4 +17,4 @@ function DataService() {
 
 angular
 .module('App')
-.factory('DataService', DataService);
+.service('DataService', DataService);

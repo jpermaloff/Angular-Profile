@@ -6,10 +6,10 @@ template: `
 <h1>{{ $ctrl.user.name }} </h1>
 <p>{{ $ctrl.user.contact }}</p>
 <p>{{ $ctrl.user.bio }}</p>
-<button ng-click="$ctrl.edit();">Edit Profile</button>
+<button ng-click="$ctrl.edit($ctrl.user);">Edit Profile</button>
 </section>
 `,
-controller: ['DataService', "$location", function(DataService, $location) {
+controller: ['DataService', '$location', function(DataService, $location) {
 const vm = this;
 vm.user = DataService.getUserProfile();
 vm.edit = () => {
