@@ -3,19 +3,17 @@ const profile = {
 template: `
 <section class="container">
 <section class="profilePic"></section>
-<h1>{{ $ctrl.info.name }} </h1>
-<p>{{ $ctrl.info.contact }}</p>
-<p>{{ $ctrl.info.bio }}</p>
-<button>Edit Profile</button>
+<h1>{{ $ctrl.user.name }} </h1>
+<p>{{ $ctrl.user.contact }}</p>
+<p>{{ $ctrl.user.bio }}</p>
+<button ng-click="$ctrl.edit();">Edit Profile</button>
 </section>
 `,
-controller: ['DataFactory', function(DataFactory) {
+controller: ['DataService', "$location", function(DataService, $location) {
 const vm = this;
-vm.info = {
-    name: "Grant Chirpus",
-    contact: "grant@grandcircus.co",
-    bio: "I am cool. I have a good job. I like to play Tetris. I am pretty ok at angularJS"
-
+vm.user = DataService.getUserProfile();
+vm.edit = () => {
+    $location.path("/edit-profile")
 }
 }]
 }

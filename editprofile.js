@@ -2,19 +2,19 @@
 const editProfile = {
 template: `
     <form>
-    <label>Name </label><input type="text" ng-model="$ctrl.newInfo.name">
-    <label>Contact </label><input type="text" ng-model="$ctrl.newInfo.contact">
-    <label>Bio </label><input type="text" ng-model="$ctrl.newInfo.bio">
-    <button ng-click='$ctrl.updateInfo($ctrl.newInfo);'>Update</button>
+    <label>Name </label><input type="text" ng-model="$ctrl.user.name">
+    <label>Contact </label><input type="text" ng-model="$ctrl.user.contact">
+    <label>Bio </label><input type="text" ng-model="$ctrl.user.bio">
+    <button ng-click='$ctrl.update($ctrl.user);'>Update</button>
     </form>
     `,
-    controller: ['DataFactory', function(DataFactory){
+    controller: ['DataService', "$location", function(DataService, $location) {
         let vm = this;
-        vm.info = null;
-        vm.newInfo = null;
-        vm.updateInfo = (info) => {
-            DataFactory.udateInfo(info);
-        };
+        vm.user = DataService.getUserProfile();
+        vm.update = (newInfo) => {
+DataService.setUserProfile(newInfo)
+ $location.path("/profile")
+        }
     }]
 }
 

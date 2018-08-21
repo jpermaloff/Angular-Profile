@@ -36,3 +36,6 @@ button:hover {
     width: 400px;
     background-color: #1ECEFD
 }
+p, h1{
+    margin-left: 30px;
+}
